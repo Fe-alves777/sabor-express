@@ -1,3 +1,4 @@
+#Importa Biblioteca os que permite escrever no terminal
 import os
 
 restaurantes = [{'nome': 'The Bear', 'categoria': 'italiana', 'ativo': True}, 
@@ -6,6 +7,7 @@ restaurantes = [{'nome': 'The Bear', 'categoria': 'italiana', 'ativo': True},
 ]
 
 def exibir_nome_programa():
+    '''Essa função exibe o titulo do programa'''
     print('''
         
     ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
@@ -17,21 +19,24 @@ def exibir_nome_programa():
     ''');
 
 def exibir_opcoes():
+    '''Essa função exibe as opções que o cliente tem'''
     print('1. Cadastrar restaurante')
     print('2. Listar restaurante')
     print('3. Alternar estado do restaurante')
     print('4. Sair \n')
 
 def finalizar_app():
-    
+    '''Essa função exibe o encerramento do programa e o finaliza'''
     exibir_subtitulo('Encerrando programa....') 
 
 def opcao_invalida():
+    '''Essa função exibe Opção inválida e retorna ao menu principal'''
     print('Opção inválida!\n')
 
     voltar_ao_menu_principal()
 
 def exibir_subtitulo(texto):
+    '''Essa função formata e exibe o subtitulo das opções'''
     os.system('cls')
     linha = '*' * (len(texto) )
 
@@ -42,6 +47,7 @@ def exibir_subtitulo(texto):
 
 
 def voltar_ao_menu_principal():
+    '''Recebe um input qualquer para retornar ao menu principal'''
     input('\nDigite uma tecla para voltar ao menu principal ')
     main()
 
@@ -115,6 +121,9 @@ def alterar_estado_restaurante():
     voltar_ao_menu_principal()
 
 def escolher_opcao():
+    '''Verifica a opção escolhida e retorna a função correspondente
+        Verifica valores invalidos e manda para a função de opcao_invalida
+    '''
     try:
         opcao_escolhida = int(input('Escolha uma opção: '))
 
@@ -146,6 +155,7 @@ def escolher_opcao():
     #         print('Opção inválida!!')
 
 def main():
+    '''Função main do código que inicia as outras'''
     os.system('cls')
     exibir_nome_programa()
     exibir_opcoes()
